@@ -101,14 +101,14 @@ DWORD WINAPI RGBQUAD2(LPVOID lpvd)
 				for (int i = 0; i < w * h; i++) {
 					int x = i % w, y = i / w;
 					int cx = x - (w / 2);
-			        int cy = y - (h / 2);
+			                int cy = y - (h / 2);
 					int zx = (cx * cx);
 					int zy = (cy * cy);
 					int di = 128.0 + i;
-                    int fx = di ^ (di ^ abs(sqrt(zx + zy) / 3.0));
-                    rgbq[i].red += fx+i;
-                    rgbq[i].green += fx+i;
-                    rgbq[i].blue += fx+i;
+                                        int fx = di ^ (di ^ abs(sqrt(zx + zy) / 3.0));
+                                        rgbq[i].red += fx+i;
+                                        rgbq[i].green += fx+i;
+                                        rgbq[i].blue += fx+i;
 				}
 				BitBlt(hdc, 0, 0, w, h, mdc, 0, 0, SRCCOPY);
 				Sleep(1);
